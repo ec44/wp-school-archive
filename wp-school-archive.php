@@ -14,7 +14,7 @@
  * Plugin Name:       WordPress School Archive
  * Plugin URI:        http://www.ec44.fr
  * Description:       This plugin contain a school years widget and a month of a school year widget.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            JF Gatineau <jfgatineau@ec44.fr>
  * Author URI:        http://www.ec44.fr
  * Text Domain:       wp-school-archive
@@ -61,7 +61,7 @@ class Widget_School_Years extends WP_Widget {
 
 		parent::__construct(
 			$this->get_widget_slug(),
-			__( 'Années scolaires', $this->get_widget_slug() ),
+			__( 'Archive années scolaires', $this->get_widget_slug() ),
 			array(
 				'classname'  => $this->get_widget_slug().'-class',
 				'description' => __( 'Liste des archives par années scolaires.', $this->get_widget_slug() )
@@ -291,10 +291,10 @@ class Widget_Current_School_Year extends WP_Widget {
 
 		parent::__construct(
 			$this->get_widget_slug(),
-			__( 'Année scolaire en cours', $this->get_widget_slug() ),
+			__( 'Archive année scolaire en cours', $this->get_widget_slug() ),
 			array(
 				'classname'  => $this->get_widget_slug().'-class',
-				'description' => __( 'Liste des archives par années scolaires.', $this->get_widget_slug() )
+				'description' => __( "Liste des archives de l'année scolaire en cours.", $this->get_widget_slug() )
 			)
 		);
 
