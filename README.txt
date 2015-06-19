@@ -4,7 +4,7 @@ Contributors: jfgatineau <jfgatineau@ec44.fr>
 Tags: year school archive, yearc school, archive, year school, school
 Requires at least: 4.0.0
 Tested up to: 4.2.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,10 @@ This plugin contain a school years widget and a month of a school year widget.
 3. Go to Widgets and add "Années scolaires" ou "Année scolaire en cours".
 
 == Changelog ==
+
+= 1.0.2 =
++ Ajout de l'option "Cacher l'année en cours"
+* Correction de texte
 
 = 1.0.1 =
 *html correction

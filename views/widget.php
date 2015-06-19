@@ -1,13 +1,17 @@
 <div class="widget-school-years">
 	<h3 class="widget-title"><?php echo $instance['widget_school_years_title']; ?></h3>
 	<ul>
-	<?php
+	<?php		
 	$dateDuJour = date("Ymd");
 	$anneeDeRentree = date("Y");
 	// Si on est avant le 01 aout
 	if( $dateDuJour < ($anneeDeRentree."0801")):
 		$anneeDeRentree = $anneeDeRentree-1;
-	endif;			
+	endif;
+	if ($instance['widget_school_years_hide_current'] == "1") :
+		$anneeDeRentree--;
+	endif;
+	$unAffichage = false;
 	for ( $year_index = 0 ; $year_index < $instance['widget_school_years_nb_of_yers'] ; $year_index++ )
 	{
 		// WP_Query arguments
@@ -36,7 +40,7 @@
 		//$postes_in_school_year = new WP_Query( $args );
 		$myposts = get_posts( $args );
 		if(count($myposts)>0) :
-		//if ($postes_in_school_year->have_posts() ):
+		$unAffichage = true;
 		?>
 		<li>
 			<a href="<?php echo get_school_year_link($anneeDeRentree); ?>"><?php echo $anneeDeRentree; ?> - <?php echo $anneeDeRentree+1; ?></a>
@@ -46,6 +50,11 @@
 		wp_reset_postdata();
 		$anneeDeRentree--;
 	}
+	if ($unAffichage == false) :
+		?>
+		<li>Aucune année scolaire à afficher</li>
+		<?php
+	endif;
 	?>
 	</ul>
 </div>
